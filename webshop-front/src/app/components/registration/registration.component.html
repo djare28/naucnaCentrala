@@ -1,0 +1,53 @@
+<div class="darkbackground"> 
+  <div class="container">
+      <div class="row ml-auto mr-auto">
+          <div class="col col-md-3"></div>
+          <div class="col col-md-6 mt-3">
+          
+              <!--FORM-->
+              <form #regForm="ngForm" ngNativeValidate (ngSubmit)="onSubmit(regForm.value, regForm)">
+                  <h2 class="mb-3 text-light mt-3">Registracija</h2>
+                  
+                  <div *ngFor="let field of formFields | slice:0:formFields.length-1; let ind = index" >
+                    <label for={{field.id}}>{{field.label}}</label>
+                    <div class="form-group">
+                      <label class="text-light" for={{field.id}}></label>
+                      <input name={{field.id}} [(ngModel)]="formModel[ind].fieldValue" id={{field.id}} type="text" class="form-control" required *ngIf="field.type.name=='string'"/>
+                    </div>
+                    <div class="form-group">
+                      <label class="text-light" for={{field.id}}></label>
+                      <input name={{field.id}} [(ngModel)]="formModel[ind].fieldValue" id={{field.id}} type="checkbox" class="form-control"  *ngIf="field.type.name=='boolean'"/>
+                    </div>
+                    <div class="form-group">
+                      <label class="text-light" for={{field.id}}></label>
+                      <input name={{field.id}} [(ngModel)]="formModel[ind].fieldValue" id={{field.id}} type="number" class="form-control" required *ngIf="field.type.name=='long'"/>
+                    </div>
+                </div>
+            
+                <div class="card">
+                  <div class="card-header">
+                    Naučne oblasti
+                  </div>
+                  <div class="card-body">
+                    <button class="btn btn-success mb-3 mr-1" type="button" (click)="addOblast()"><i class="fa fa-plus"></i></button>
+                    <div class="form-group" *ngFor="let o of oblasti; let i = index">
+                      <label class="text-dark" for="recenzent">{{o}}</label>
+                      <select name="naucnaOblast{{i}}" [(ngModel)]="formModel[i+9].fieldValue" class="form-control" required>
+                        <option *ngFor="let item of listaOblasti" value="{{item.id}}">
+                          {{item.naziv}}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!--BUTTON-->
+                <button type="submit" [hidden]="hidden" class="btn btn-primary mt-3 mb-4" >Potvrdi</button>
+                <div [hidden]="!hidden" class="lds-roller mt-3"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+              </form>
+
+          </div>
+          <div class="col col-md-3"></div>
+      </div>
+  </div>    
+</div>
