@@ -68,4 +68,7 @@ public class Casopis {
             joinColumns = @JoinColumn(name = "casopis_id"),
             inverseJoinColumns = @JoinColumn(name = "nacin_placanja_id"))
     private List<NacinPlacanja> naciniPlacanja = new ArrayList<>();
+
+    private String processInstanceId;
+
 }

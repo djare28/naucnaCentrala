@@ -287,24 +287,6 @@ public class WebShopController {
         return correctionDTO;
     }
 
-    /*@GetMapping(path = "/numberOfTasks/{username}", produces = "application/json")
-    @PreAuthorize("hasRole('ADMIN') or hasRole('UREDNIK')")
-    public @ResponseBody Integer getNumberOfTasks(@PathVariable String username) {
-        List<Task> taskList = taskService.createTaskQuery().taskAssignee(username).list();
-        Integer counter = 0;
-
-        for (Task t:taskList) {
-            if(t.getTaskDefinitionKey().equals("aktivacijaCasopisa") ||
-                t.getTaskDefinitionKey().equals("potvrdaRecenzenta") ||
-                t.getTaskDefinitionKey().equals("formaCasopisa") ||
-                t.getTaskDefinitionKey().equals("unosUrednikaIRecenzenata")){
-
-                counter++;
-            }
-        }
-
-        return counter;
-    }*/
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping(path = "/potvrdaRecenzenta", produces = "application/json")

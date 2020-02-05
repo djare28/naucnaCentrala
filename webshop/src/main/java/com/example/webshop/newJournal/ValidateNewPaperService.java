@@ -159,6 +159,7 @@ public class ValidateNewPaperService  implements JavaDelegate {
                 maxIssn = 10000000L;
             }
             casopis.setIssn(maxIssn+1);
+            casopis.setProcessInstanceId(execution.getProcessInstanceId());
         }
 
         casopis = casopisRepository.save(casopis);
