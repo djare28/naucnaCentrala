@@ -3,6 +3,8 @@ package com.example.webshop.sendArtical.camunda;
 import com.example.webshop.common.utils.ObjectMapperUtils;
 import com.example.webshop.dto.ArticleDTO;
 import com.example.webshop.model.Article;
+import com.example.webshop.sendArtical.ArticleRepository;
+import com.example.webshop.sendArtical.ArticleService;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.springframework.beans.factory.annotation.Autowired;

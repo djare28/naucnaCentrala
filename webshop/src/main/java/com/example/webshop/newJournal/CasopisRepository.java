@@ -13,4 +13,6 @@ public interface CasopisRepository extends JpaRepository<Casopis, Long> {
     Long findMaxIssn();
 
     List<Casopis> findAll();
+
+    Casopis findOneByNaziv(String naziv);
 }

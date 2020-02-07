@@ -1,4 +1,4 @@
-package com.example.webshop.sendArtical.camunda;
+package com.example.webshop.sendArtical;
 
 import com.example.webshop.model.Koautor;
 import org.springframework.data.jpa.repository.JpaRepository;

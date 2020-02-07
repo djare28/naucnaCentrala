@@ -46,6 +46,8 @@ public class Korisnik implements UserDetails {
     @Column(name = "recenzent", unique = false)
     private Boolean recenzent;
 
+    private Boolean platioClanarinu = false;
+
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_authority",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),

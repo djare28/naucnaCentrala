@@ -1,4 +1,4 @@
-package com.example.webshop.sendArtical.camunda;
+package com.example.webshop.sendArtical;
 
 import com.example.webshop.dto.ArticleDTO;
 import com.example.webshop.dto.KoautorDTO;
