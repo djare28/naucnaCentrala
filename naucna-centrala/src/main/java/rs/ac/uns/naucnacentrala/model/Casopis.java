@@ -30,8 +30,6 @@ public class Casopis implements Serializable {
 
     private Long cena;
 
-    private String koPlaca;
-
     @ManyToMany(cascade = {
             CascadeType.MERGE,
             CascadeType.REFRESH
@@ -68,7 +66,7 @@ public class Casopis implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
     private List<User> recezenti=new ArrayList<User>();
 
-
+    private String koPlaca;
 
     private Boolean enabled=false;
 

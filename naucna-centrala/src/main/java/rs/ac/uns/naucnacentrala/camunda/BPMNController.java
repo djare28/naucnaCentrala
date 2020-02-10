@@ -151,14 +151,12 @@ public class BPMNController {
         }
     }
 
-
     @PreAuthorize("hasRole('ADMIN')")
     @RequestMapping(method = RequestMethod.GET, value = "/admin/registration")
     public ResponseEntity getActiveAdminRegTasks() {
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         identityService.setAuthenticatedUserId(auth.getName());
-
         return ResponseEntity.ok().body(registrationService.getAllNotActivated(auth.getName()));
     }
 
@@ -179,7 +177,6 @@ public class BPMNController {
         Authentication authentication=SecurityContextHolder.getContext().getAuthentication();
         return new ResponseEntity<>(utils.createFormDTO(task,task.getProcessInstanceId()), HttpStatus.OK);
     }
-
 
     @RequestMapping(method = RequestMethod.GET, value = "/tasks/{id}")
     public ResponseEntity getMyTask(@PathVariable String id){
@@ -220,6 +217,4 @@ public class BPMNController {
 
         return ResponseEntity.ok().body(ret);
     }
-
-
 }

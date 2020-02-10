@@ -42,7 +42,6 @@ public class UserDTO {
     private String drzava;
 
     private String grad;
-
     private String titula;
 
     private String taskId;

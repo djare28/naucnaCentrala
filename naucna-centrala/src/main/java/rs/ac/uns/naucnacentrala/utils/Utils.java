@@ -33,13 +33,13 @@ public class Utils {
     RuntimeService runtimeService;
 
     @Autowired
+    TaskService taskService;
+
+    @Autowired
     FormService formService;
 
     @Autowired
     IdentityService identityService;
-
-    @Autowired
-    TaskService taskService;
 
     public HashMap<String, Object> mapListToDto(List<FormSubmissionDto> list)
     {
