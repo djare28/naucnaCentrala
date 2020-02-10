@@ -1,0 +1,11 @@
+
+      <button class="btn btn-outline-success mt-3 ml-5" routerLink="register" *ngIf="!(currentUser$ | async)">Register</button>
+      <button class="btn btn-outline-success mt-3 ml-5" routerLink="login" *ngIf="!(currentUser$ | async)">Login</button>
+      <button class="btn btn-outline-success mt-3 ml-5" (click)="newJournal()" *ngIf="(currentUser$ | async)?.role=='ROLE_UREDNIK'">Add New Journal</button>
+      <button class="btn btn-outline-success mt-3 ml-5" routerLink="admin/journals" *ngIf="(currentUser$ | async)?.role=='ROLE_ADMIN'">Activate Journals</button>
+      <button class="btn btn-outline-success mt-3 ml-5" routerLink="admin/users" *ngIf="(currentUser$ | async)?.role=='ROLE_ADMIN'">Activate Reviewers</button>
+      <button class="btn btn-outline-success mt-3 ml-5" routerLink="urednik/journals" *ngIf="(currentUser$ | async)?.role=='ROLE_UREDNIK'">My Journals</button>
+      <button class="btn btn-outline-success mt-3 ml-5" routerLink="admin/register/urednik" *ngIf="(currentUser$ | async)?.role=='ROLE_ADMIN'">Register New Editors</button>
+      <button class="btn btn-outline-success mt-3 ml-5" routerLink="author/select/journal" *ngIf="(currentUser$ | async)?.role=='ROLE_AUTHORS'">Add paper to journal</button>
+      <button class="btn btn-outline-success mt-3 ml-5" routerLink="tasks" *ngIf="(currentUser$ | async)">Tasks</button>
+      <button class="btn btn-outline-success mt-3 ml-5" (click)="logout()" *ngIf="(currentUser$ | async)">Logout</button>
