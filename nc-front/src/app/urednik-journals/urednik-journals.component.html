@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row mt-5">
+    <h2 class="text-primary mb-5">Moji časopisi:</h2>
+  </div>
+  <div class="row ml-auto mr-auto">
+    <div class="col col-md-3 mb-5 mr-5" *ngFor="let casopis of casopisi">
+      <div class="card bg-dark text-light" style="height: 17rem;width: 20rem;">
+        <div class="card-body">
+          <h3 class="card-title">{{casopis.naziv}}</h3>
+          <table class="table text-light">
+            <tr>
+              <td>ISSN: </td>
+              <td>{{casopis.issn}}</td>
+            </tr>
+            <tr>
+              <td>Članarina: </td>
+              <td>{{casopis.cena}} $</td>
+            </tr>
+            <tr>
+              <td>Kome se naplacuje: </td>
+              <td>{{casopis.koPlaca}}</td>
+            </tr>
+          </table>
+          <button  class="btn btn-primary" (click)="onClick(casopis.processInstanceId)" *ngIf="casopis.casopisStatus=='WAITING_FOR_INPUT'">Activate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
