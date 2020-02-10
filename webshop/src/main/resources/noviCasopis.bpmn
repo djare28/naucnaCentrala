@@ -68,12 +68,12 @@
     <bpmn:endEvent id="EndEvent_1w3k31p">
       <bpmn:incoming>SequenceFlow_02jbg2l</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:serviceTask id="Task_1ycfzub" name="Promensa statusa casopisa u aktivno stanje" camunda:class="com.example.webshop.newJournal.ActivatePaperService">
+    <bpmn:serviceTask id="Task_1ycfzub" name="Promensa statusa casopisa u aktivno stanje" camunda:class="rs.ac.uns.naucnacentrala.newJournal.ActivatePaperService">
       <bpmn:incoming>SequenceFlow_0ac0h0h</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_02jbg2l</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_18k8w4h" sourceRef="validacija" targetRef="ExclusiveGateway_1hmyrhz" />
-    <bpmn:serviceTask id="validacija" name="Validacija podataka i kreiranje casopisa" camunda:class="com.example.webshop.newJournal.ValidateNewPaperService">
+    <bpmn:serviceTask id="validacija" name="Validacija podataka i kreiranje casopisa" camunda:class="rs.ac.uns.naucnacentrala.newJournal.ValidateNewPaperService">
       <bpmn:incoming>SequenceFlow_14e3sp0</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_18k8w4h</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -94,7 +94,7 @@
     <bpmn:sequenceFlow id="SequenceFlow_1eb9q3t" name="validacija neuspesna" sourceRef="ExclusiveGateway_1hmyrhz" targetRef="ExclusiveGateway_060ksjz">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${validacija == false}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:serviceTask id="upisUbazu" name="Upis podataka o unetim saradnicima" camunda:class="com.example.webshop.newJournal.UredniciRecenzentiService">
+    <bpmn:serviceTask id="upisUbazu" name="Upis podataka o unetim saradnicima" camunda:class="rs.ac.uns.naucnacentrala.newJournal.UredniciRecenzentiService">
       <bpmn:incoming>SequenceFlow_0z954gx</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0a6ujqw</bpmn:outgoing>
     </bpmn:serviceTask>

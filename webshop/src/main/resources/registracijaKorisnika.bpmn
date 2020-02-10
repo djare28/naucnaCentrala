@@ -34,7 +34,7 @@
       <bpmn:outgoing>SequenceFlow_00t0opp</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="SequenceFlow_1n8mnvr" sourceRef="slanjeEmaila" targetRef="emailPotvrdaRegistracije" />
-    <bpmn:serviceTask id="slanjeEmaila" name="Slanje email-a" camunda:class="com.example.webshop.newUser.ConfirmationEmailService">
+    <bpmn:serviceTask id="slanjeEmaila" name="Slanje email-a" camunda:class="rs.ac.uns.naucnacentrala.newUser.ConfirmationEmailService">
       <bpmn:incoming>SequenceFlow_1tdjeo1</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1n8mnvr</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -69,7 +69,7 @@
     <bpmn:sequenceFlow id="SequenceFlow_1h2114l" name="admin odobrio recenzenta" sourceRef="ExclusiveGateway_1yhox4h" targetRef="registracijaRecenzenta">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${recenzentOdobren == true}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:serviceTask id="registracijaRecenzenta" name="Upis recenzenta u sistem" camunda:class="com.example.webshop.newUser.RecRegistrationService">
+    <bpmn:serviceTask id="registracijaRecenzenta" name="Upis recenzenta u sistem" camunda:class="rs.ac.uns.naucnacentrala.newUser.RecRegistrationService">
       <bpmn:incoming>SequenceFlow_1h2114l</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_12klz6o</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -89,7 +89,7 @@
     <bpmn:endEvent id="EndEvent_013oaj6">
       <bpmn:incoming>SequenceFlow_0j12e1t</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:serviceTask id="validacija" name="Validacija podataka" camunda:class="com.example.webshop.newUser.ValidateRegistrationService">
+    <bpmn:serviceTask id="validacija" name="Validacija podataka" camunda:class="rs.ac.uns.naucnacentrala.newUser.ValidateRegistrationService">
       <bpmn:incoming>SequenceFlow_0r4acf6</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_14pv1u8</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -106,7 +106,7 @@
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${validacija == true}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_11ss6xb" sourceRef="Task_1f7uzqw" targetRef="ExclusiveGateway_19k9v8t" />
-    <bpmn:serviceTask id="Task_1f7uzqw" name="Promena statusa korisnika u aktivan" camunda:class="com.example.webshop.newUser.ActivateUserService">
+    <bpmn:serviceTask id="Task_1f7uzqw" name="Promena statusa korisnika u aktivan" camunda:class="rs.ac.uns.naucnacentrala.newUser.ActivateUserService">
       <bpmn:incoming>SequenceFlow_00t0opp</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_11ss6xb</bpmn:outgoing>
     </bpmn:serviceTask>
