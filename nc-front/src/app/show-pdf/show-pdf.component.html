@@ -1,0 +1,33 @@
+
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">PDF</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <ngx-extended-pdf-viewer [src]="src" useBrowserLocale="true" height="80vh"></ngx-extended-pdf-viewer>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('uspeh')">Zatvori</button>
+  </div>
+</ng-template>
+<div class="container">
+  <div class="row mt-5">
+    <h2 class="text-primary">Proverite ispravnost PDF-a koji ste izabrali.</h2>
+  </div>
+  <div class="row ml-auto mr-auto">
+<div class="card bg-dark text-light" style="height: 12rem;width: 16rem;">
+  <div class="card-body">
+    <h3 class="card-title">Izabrani PDF:</h3>
+    <table class="table text-light">
+      <tr>
+        <button type="button" class="btn btn-outline-primary" (click)="open(content)">Prikazi PDF</button>     
+       </tr>
+    </table>
+  </div>
+</div>
+</div>
+</div>
