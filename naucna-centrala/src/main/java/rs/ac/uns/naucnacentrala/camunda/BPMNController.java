@@ -107,8 +107,6 @@ public class BPMNController {
         String processInstanceId=task.getProcessInstanceId();
         System.out.println("INSTANCE ID: " + processInstanceId);
         if(task.getName().equals("Unos podataka i naucnih oblasti")) {
-            System.out.println("TASKKK NAMEEE: " + task.getName());
-            System.out.println("MAPAAAAAAAAAAAAA: " + map.toString());
             formService.submitTaskForm(taskId, map);
 
             Execution execution = runtimeService.createExecutionQuery().processInstanceId(processInstanceId).singleResult();
@@ -198,7 +196,6 @@ public class BPMNController {
     @RequestMapping(method = RequestMethod.GET, value = "/tasks")
     public ResponseEntity getMyTasks(){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println("AUTHHHHHHHHHHHH: " + auth.getCredentials());
         List<Task> tasks = taskService.createTaskQuery().active().taskAssignee(auth.getName()).processDefinitionKey("obradaNaucnogRada").list();
         System.out.println("TASKKKKKKKKKKKKS: " + tasks.size());
 

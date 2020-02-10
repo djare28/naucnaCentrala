@@ -54,6 +54,7 @@ public class SetSelectedJournalCompleteListener implements TaskListener {
                         }
                     }
                     delegateTask.getExecution().setVariable("casopis", casopisPV);
+                    System.out.println("CASOPIS PV: " + casopisPV);
                 }
             }
         }

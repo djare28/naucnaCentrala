@@ -17,7 +17,6 @@ public class StringMultiSelect extends AbstractFormFieldType {
     }
     public StringMultiSelect(String name){
         this.TYPE_NAME=name;
-
     };
 
     @Override
@@ -42,7 +41,6 @@ public class StringMultiSelect extends AbstractFormFieldType {
     public TypedValue convertToFormValue(TypedValue typedValue) {
         return Variables.objectValue(typedValue.getValue(),false).create();
     }
-
     @Override
     public String convertModelValueToFormValue(Object o) {
         return null;

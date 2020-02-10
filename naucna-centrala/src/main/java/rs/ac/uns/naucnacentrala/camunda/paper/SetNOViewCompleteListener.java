@@ -21,7 +21,7 @@ public class SetNOViewCompleteListener implements TaskListener {
     public void notify(DelegateTask delegateTask) {
         String noId = runtimeService.getVariable(delegateTask.getProcessInstanceId(),"naucna_oblast").toString();
         for (NaucnaOblast naucnaOblast : naucnaOblastRepository.findAll()) {
-            if (Long.valueOf(noId) == naucnaOblast.getId()) {
+            if (Long.valueOf(noId).equals(naucnaOblast.getId())) {
                 runtimeService.setVariable(delegateTask.getProcessInstanceId(), "noDefValue", naucnaOblast.getName());
                 break;
             }
